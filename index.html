@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SkyCast | Weather Dashboard</title>
+
+    <link rel="icon"
+        href="https://cdn-icons-png.flaticon.com/512/1779/1779940.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="theme-day">
+
+    <div class="bg-gradient"></div>
+
+    <main class="container">
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <span class="badge">
+                Live Weather Intelligence
+            </span>
+
+            <h1>SkyCast</h1>
+
+            <p>
+                Real-time weather insights with location-aware forecasts,
+                dynamic themes, and global city search.
+            </p>
+
+        </section>
+
+        <!-- SEARCH -->
+
+        <section class="search-card glass">
+
+            <div class="search-wrapper">
+
+                <div class="search-input">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <input
+                        id="cityInput"
+                        type="text"
+                        placeholder="Search any city in the world...">
+
+                </div>
+
+                <button id="searchBtn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Search
+                </button>
+
+                <button
+                    id="locationBtn"
+                    class="location-btn"
+                    title="Use Current Location">
+
+                    <i class="fa-solid fa-location-crosshairs"></i>
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- LOADER -->
+
+        <section
+            id="loader"
+            class="loader hidden">
+
+            <div class="spinner"></div>
+
+            <p>Fetching weather data...</p>
+
+        </section>
+
+        <!-- ERROR -->
+
+        <section
+            id="errorBox"
+            class="error-box hidden">
+        </section>
+
+        <!-- WEATHER CARD -->
+
+        <section
+            id="weatherCard"
+            class="weather-card glass hidden">
+
+            <div class="weather-top">
+
+                <div class="weather-left">
+
+                    <img
+                        id="weatherIcon"
+                        src=""
+                        alt="Weather Icon">
+
+                    <div>
+
+                        <h2 id="temperature">
+                            --
+                        </h2>
+
+                        <p id="condition">
+                            --
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="weather-right">
+
+                    <h3 id="cityName">
+                        --
+                    </h3>
+
+                    <p id="countryName">
+                        --
+                    </p>
+
+                    <span id="currentTime">
+                        --
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="details-grid">
+
+                <div class="detail-card">
+
+                    <i class="fa-solid fa-temperature-half"></i>
+
+                    <span>Feels Like</span>
+
+                    <strong id="feelsLike">
+                        --
+                    </strong>
+
+                </div>
+
+                <div class="detail-card">
+
+                    <i class="fa-solid fa-droplet"></i>
+
+                    <span>Humidity</span>
+
+                    <strong id="humidity">
+                        --
+                    </strong>
+
+                </div>
+
+                <div class="detail-card">
+
+                    <i class="fa-solid fa-wind"></i>
+
+                    <span>Wind Speed</span>
+
+                    <strong id="windSpeed">
+                        --
+                    </strong>
+
+                </div>
+
+                <div class="detail-card">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                    <span>Updated</span>
+
+                    <strong id="updatedAt">
+                        --
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- HISTORY -->
+
+        <section class="history-card glass">
+
+            <div class="history-header">
+
+                <h3>Recent Searches</h3>
+
+                <button id="clearHistory">
+                    Clear
+                </button>
+
+            </div>
+
+            <div
+                id="historyContainer"
+                class="history-container">
+
+            </div>
+
+        </section>
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <p>
+                Built with HTML, CSS, JavaScript &
+                Open-Meteo API
+            </p>
+
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
